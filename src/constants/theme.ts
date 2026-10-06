@@ -1,65 +1,80 @@
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Design tokens mirrored from the Cognitrix website (Tailwind classes in cognitrix/src).
+ * Primary teal #00a98d, page background #fafafa, white cards with gray-100 borders.
  */
+export const C = {
+  primary: '#00a98d',
+  primaryHover: '#008f77',
+  primaryDark: '#007a66',
+  primary5: 'rgba(0,169,141,0.05)',
+  primary10: 'rgba(0,169,141,0.10)',
+  primary20: 'rgba(0,169,141,0.20)',
+  primary30: 'rgba(0,169,141,0.30)',
 
-import '@/global.css';
+  bg: '#fafafa',
+  card: '#ffffff',
+  black: '#000000',
+  white: '#ffffff',
 
-import { Platform } from 'react-native';
+  gray50: '#f9fafb',
+  gray100: '#f3f4f6',
+  gray200: '#e5e7eb',
+  gray300: '#d1d5db',
+  gray400: '#9ca3af',
+  gray500: '#6b7280',
+  gray600: '#4b5563',
+  gray700: '#374151',
+  gray900: '#111827',
 
-export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
+  emerald50: '#ecfdf5',
+  emerald100: '#d1fae5',
+  emerald200: '#a7f3d0',
+  emerald500: '#10b981',
+  emerald600: '#059669',
+  emerald700: '#047857',
+
+  amber50: '#fffbeb',
+  amber100: '#fef3c7',
+  amber200: '#fde68a',
+  amber500: '#f59e0b',
+  amber600: '#d97706',
+  amber700: '#b45309',
+  amber800: '#92400e',
+  amber900: '#78350f',
+
+  red50: '#fef2f2',
+  red200: '#fecaca',
+  red400: '#f87171',
+  red500: '#ef4444',
+  red600: '#dc2626',
+  red700: '#b91c1c',
+
+  orange50: '#fff7ed',
+  orange100: '#ffedd5',
+  orange200: '#fed7aa',
+  orange500: '#f97316',
+  orange600: '#ea580c',
+  orange700: '#c2410c',
+  orange900: '#7c2d12',
+
+  purple50: '#faf5ff',
+  purple100: '#f3e8ff',
+  purple600: '#9333ea',
+  purple700: '#7e22ce',
+  purple900: '#581c87',
+
+  blue50: '#eff6ff',
+  blue100: '#dbeafe',
+  blue600: '#2563eb',
+  blue700: '#1d4ed8',
+  blue900: '#1e3a8a',
+
+  yellow50: '#fefce8',
+  yellow500: '#eab308',
+  yellow700: '#a16207',
+
+  indigo: '#6366f1',
+  violet: '#7c3aed',
 } as const;
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
-
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
-
-export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
-} as const;
-
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+export const R = { sm: 8, md: 12, lg: 16, xl: 20, full: 999 } as const;

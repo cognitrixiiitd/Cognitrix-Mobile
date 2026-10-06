@@ -1,18 +1,24 @@
 {
   "expo": {
-    "name": "Cognitrix-Mobile",
+    "name": "Cognitrix",
     "slug": "Cognitrix-Mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "cognitrixmobile",
-    "userInterfaceStyle": "automatic",
+    "scheme": "cognitrix",
+    "userInterfaceStyle": "light",
     "ios": {
-      "icon": "./assets/expo.icon"
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.cognitrix.mobile",
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": ["remote-notification"]
+      }
     },
     "android": {
+      "package": "com.cognitrix.mobile",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#00a98d",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -28,11 +34,21 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#00a98d",
           "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "imageWidth": 96
         }
-      ]
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/notification-icon.png",
+          "color": "#00a98d",
+          "defaultChannel": "default"
+        }
+      ],
+      "expo-sqlite",
+      "expo-video"
     ],
     "experiments": {
       "typedRoutes": true,
